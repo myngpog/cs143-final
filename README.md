@@ -1,7 +1,7 @@
 # Flask-On-Docker Tutorial Assignment (CSCI143)
 ## By: My Nguyen
 
-[![](https://github.com/myngpog/pagila-hw/workflows/tests/badge.svg)](https://github.com/myngpog/pagila-hw/actions?query=workflow%3Atests)
+[![.github/workflows/tests.yml](https://github.com/myngpog/cs143-final/actions/workflows/tests.yml/badge.svg)](https://github.com/myngpog/cs143-final/actions/workflows/tests.yml)
 
 [Tutorial Link](https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/)
 
