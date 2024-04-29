@@ -16,12 +16,14 @@ services:
   db:
     image: postgres:13
     volumes:
-      - ./services/postgres/schema.sql:/docker-entrypoint-initdb.d/schema.sql #scheme file to run
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=hello_flask
       - POSTGRES_PASSWORD=hello_flask
       - POSTGRES_DB=hello_flask_dev
+      # - POSTGRES_USER=myng_db
+      # - POSTGRES_PASSWORD=myng123
+      # - POSTGRES_DB=twitter_db
 
 volumes:
   postgres_data:
