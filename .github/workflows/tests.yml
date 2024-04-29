@@ -2,7 +2,7 @@ name: tests
 on:
     push:
         branches: ['*']
-    pull_requests:
+    pull_request:
         branches: ['*']
 jobs:
   docker:
@@ -19,5 +19,4 @@ jobs:
         docker-compose up -d --build
         docker ps -a
         sleep 20
-        sh load_tweets.sh #load data command
-        docker-compose exec -T web ./run_tests.sh #run the tests
+        docker-compose exec -T web
