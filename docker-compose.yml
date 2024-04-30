@@ -8,11 +8,12 @@ services:
         # bind (monunt) volume
       - ./services/web/:/usr/src/app/
     ports:
-        - 13490:5000
+        - 1349:5000
     env_file:
       - ./.env.dev
     depends_on:
       - postgres
+
   postgres:
     build: services/postgres
       # image: postgres:13
@@ -22,9 +23,8 @@ services:
       - POSTGRES_USER=hello_flask
       - POSTGRES_PASSWORD=hello_flask
       - POSTGRES_DB=hello_flask_dev
-      # - POSTGRES_USER=myng_db
-      # - POSTGRES_PASSWORD=myng123
-      # - POSTGRES_DB=twitter_db
+    ports:
+        - 13490:5432
 
 volumes:
   postgres_data:
