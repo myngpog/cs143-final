@@ -18,13 +18,14 @@ services:
     build: services/db
     # image: postgres:13
     volumes:
+      - ./:/tmp/db
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=hello_flask
       - POSTGRES_PASSWORD=hello_flask
       - POSTGRES_DB=hello_flask_dev
     ports:
-      - 13490:13490 #database host
+      - 13490:5432 #database host
 
 volumes:
   postgres_data:

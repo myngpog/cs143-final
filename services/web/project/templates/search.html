@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Search Twitter</h2>
+
+<form action='/search' method="GET">
+    <table>
+        <tr>
+            <td>search</td>
+            <td><input type=text name='search'></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type=submit value='search'></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}
