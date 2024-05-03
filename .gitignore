@@ -1,3 +1,5 @@
 .env.prod.db
 # .env.prod
 # .env.dev
+output.logs
+data/
