@@ -117,13 +117,11 @@ def insert_tweet(connection,tweet):
             insert into users (
                 id_users,
                 created_at,
-                name,
-                location
+                name
               ) values (
                 :id_users,
                 :created_at,
-                :name,
-                :location
+                :name
               ) on conflict do nothing;
             ''')
 
@@ -133,7 +131,6 @@ def insert_tweet(connection,tweet):
             'id_users': tweet['user']['id'],
             'created_at': tweet['user']['created_at'],
             'name': remove_nulls(tweet['user']['name']),
-            'location': remove_nulls(tweet['user']['location'])
         })
 
         ########################################

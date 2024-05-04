@@ -9,6 +9,10 @@
 </p>
 {% endif %}
 
+{% if logged_in %}
+<p>Welcome back!</p>
+
+{% else %}
 <form action='/login' method="POST">
     <table>
         <tr>
@@ -25,5 +29,6 @@
         </tr>
     </table>
 </form>
-<p>New information.</p>
+
+{% endif %}
 {% endblock %}

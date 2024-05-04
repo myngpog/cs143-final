@@ -3,4 +3,18 @@
 {% block content %}
 <h2>Home</h2>
 <p>Welcome to twitter clone.</p>
+
+<h2>Newest Tweets</h2>
+    <ul>
+        {% for message in messages %}
+        {% if message.text %}
+        <p>
+            <strong>{{ message.username }}</strong>: {{ message.text }}
+            <br>
+            <small>Posted on {{ message.created_at }}</small>
+        </p>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
 {% endblock %}
