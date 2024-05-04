@@ -72,23 +72,14 @@ def are_credentials_good(username, password):
     else:
         return False
 
-@app.route('/')     
-def root():
-    print_debug_info()
-
-    messages = [{}]
-
-    # check if logged in correctly
-    username = request.cookies.get('username')
-    password = request.cookies.get('password')
-    good_credentials = are_credentials_good(username, password)
-    print('good_credentials=', good_credentials)
-
+def displayTweets():
     # render_template does preprocessing of the input html file;
     # technically, the input to the render_template function is in a language called jinja2
     # the output of render_template is html
 
     # display newest 20 tweets
+    messages = [{}]
+
     sql = """
     SELECT tweets.id_users, users.name as username, tweets.text, tweets.created_at
     FROM tweets
@@ -102,10 +93,21 @@ def root():
             messages.append({
                 'username': row.username,
                 'text': row.text, 
-                'created_at': row.created_at.strftime('%Y-%m-%d %H:%M:%S') # .strftime is to format it for better readability
-            }) 
+                'created_at': row.created_at.strftime('%Y-%m-%d %H:%M:%S') # .strftime is to format date for better readability
+            })
+    return messages
 
-    return render_template('root.html', logged_in=good_credentials, messages=messages)
+@app.route('/')     
+def root():
+    print_debug_info()
+
+    # check if logged in correctly
+    username = request.cookies.get('username')
+    password = request.cookies.get('password')
+    good_credentials = are_credentials_good(username, password)
+    print('good_credentials=', good_credentials) 
+
+    return render_template('root.html', logged_in=good_credentials, messages=displayTweets())
 
 
 @app.route('/login', methods=['GET', 'POST'])     
@@ -145,17 +147,12 @@ def login():
             response.set_cookie('password', password)
             return response
 
-# scheme://hostname/path
-# the @app.route defines the path
-# the hostname and scheme are given to you in the output of the triangle button
-# for settings, the url is http://127.0.0.1:5000/logout to get this route
 @app.route('/logout')     
 def logout():
     # Clear the login cookies by setting an empty value and an expiry time in the past
-    response = make_response(render_template('root.html', logged_in=False))
+    response = make_response(render_template('logout.html', logged_in=False))
     response.set_cookie('username', '', expires=0)
     response.set_cookie('user_id', '', expires=0)
-    # Add any other cookies you may want to clear
 
     return response
 
@@ -185,27 +182,41 @@ def create_message():
     if request.method == 'POST':
         # removes trailing and ending whitespaces to check for empty input
         message = request.form.get('message').strip() if request.form.get('message') else ''
+        print(message)
         if not message:  # No message was entered
            return render_template('create_message.html', returnMessage="No message provided.", logged_in=good_credentials)
 
         try:
             with get_connection() as connection:
-                sql = """
-                INSERT INTO tweets (
-                    id_users,
-                    created_at, 
-                    text
-                ) VALUES (
-                    :id_users, 
-                    NOW(), 
-                    :message);
-                """
-                id_users = get_user_id(username)
-                connection.execute(text(sql), {'id_users': id_users, 'message': message})
+                transaction = connection.begin()
+                try:
+                    id_users = get_user_id(username)
+                    print(id_users)
+                    sql = """
+                    INSERT INTO tweets (
+                        id_users,
+                        created_at, 
+                        text
+                    ) VALUES (
+                        :id_users, 
+                        NOW(), 
+                        :message);
+                    """
+                    print("Executing SQL...")
+                    connection.execute(text(sql), {'id_users': id_users, 'message': message})
+                    transaction.commit()
+                    print("SQL executed successfully.")
+                    # in case of error in trans
+                except Exception as e:    
+                    transaction.rollback()
+                    raise e
             return render_template('create_message.html', returnMessage="Message successfully posted!", logged_in=good_credentials)
+            
+        # in case of error with connection
         except Exception as e:
             print("An error occurred:", e)
-            return render_template('create_message.html', returnMessage="Message successfully posted!", logged_in=good_credentials)
+            return render_template('create_message.html', returnMessage=str(e), logged_in=good_credentials)   
+    
     return render_template('create_message.html', logged_in=good_credentials)
 
 

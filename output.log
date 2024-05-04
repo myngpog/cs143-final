@@ -1,115 +1,966 @@
 ================================================================================
 load tweets
 ================================================================================
-2024-05-03 20:43:17.940713 data/geoTwitter21-01-01.zip
-2024-05-03 20:43:17.949123 data/geoTwitter21-01-01.zip - i= 0 id= 1344795471093633031
-2024-05-03 20:43:21.694673 data/geoTwitter21-01-01.zip - i= 1000 id= 1344795553989865473
-2024-05-03 20:43:25.265376 data/geoTwitter21-01-01.zip - i= 2000 id= 1344795640279265286
-2024-05-03 20:43:28.986651 data/geoTwitter21-01-01.zip - i= 3000 id= 1344795728426754049
-2024-05-03 20:43:32.501423 data/geoTwitter21-01-01.zip - i= 4000 id= 1344795817517981699
-2024-05-03 20:43:35.956573 data/geoTwitter21-01-01.zip - i= 5000 id= 1344795904700796930
-2024-05-03 20:43:39.366989 data/geoTwitter21-01-01.zip - i= 6000 id= 1344795992403681281
-2024-05-03 20:43:43.082190 data/geoTwitter21-01-01.zip - i= 7000 id= 1344796079125094401
-2024-05-03 20:43:46.604033 data/geoTwitter21-01-01.zip - i= 8000 id= 1344796167029346307
-2024-05-03 20:43:50.284787 data/geoTwitter21-01-01.zip - i= 9000 id= 1344796254472187911
-2024-05-03 20:43:17.964611 data/geoTwitter21-01-03.zip
-2024-05-03 20:43:17.971383 data/geoTwitter21-01-03.zip - i= 0 id= 1345520246879346689
-2024-05-03 20:43:21.674987 data/geoTwitter21-01-03.zip - i= 1000 id= 1345520358007296002
-2024-05-03 20:43:25.175729 data/geoTwitter21-01-03.zip - i= 2000 id= 1345520465599733761
-2024-05-03 20:43:28.997160 data/geoTwitter21-01-03.zip - i= 3000 id= 1345520578309054465
-2024-05-03 20:43:32.543029 data/geoTwitter21-01-03.zip - i= 4000 id= 1345520688711434240
-2024-05-03 20:43:36.043868 data/geoTwitter21-01-03.zip - i= 5000 id= 1345520799013343233
-2024-05-03 20:43:39.486697 data/geoTwitter21-01-03.zip - i= 6000 id= 1345520903002730498
-2024-05-03 20:43:43.286453 data/geoTwitter21-01-03.zip - i= 7000 id= 1345521009101836290
-2024-05-03 20:43:46.776080 data/geoTwitter21-01-03.zip - i= 8000 id= 1345521104564215812
-2024-05-03 20:43:50.533546 data/geoTwitter21-01-03.zip - i= 9000 id= 1345521207790235648
-2024-05-03 20:43:17.970544 data/geoTwitter21-01-09.zip
-2024-05-03 20:43:17.977375 data/geoTwitter21-01-09.zip - i= 0 id= 1347694574018453504
-2024-05-03 20:43:21.764578 data/geoTwitter21-01-09.zip - i= 1000 id= 1347694663432605696
-2024-05-03 20:43:25.170552 data/geoTwitter21-01-09.zip - i= 2000 id= 1347694753442312193
-2024-05-03 20:43:28.973213 data/geoTwitter21-01-09.zip - i= 3000 id= 1347694846962769926
-2024-05-03 20:43:32.453914 data/geoTwitter21-01-09.zip - i= 4000 id= 1347694940822896640
-2024-05-03 20:43:35.915449 data/geoTwitter21-01-09.zip - i= 5000 id= 1347695034255237120
-2024-05-03 20:43:39.491917 data/geoTwitter21-01-09.zip - i= 6000 id= 1347695129918722049
-2024-05-03 20:43:43.286463 data/geoTwitter21-01-09.zip - i= 7000 id= 1347695222709387268
-2024-05-03 20:43:46.788719 data/geoTwitter21-01-09.zip - i= 8000 id= 1347695321917349889
-2024-05-03 20:43:50.489180 data/geoTwitter21-01-09.zip - i= 9000 id= 1347695415504891904
-2024-05-03 20:43:17.963904 data/geoTwitter21-01-08.zip
-2024-05-03 20:43:17.971188 data/geoTwitter21-01-08.zip - i= 0 id= 1347332185930543104
-2024-05-03 20:43:21.660203 data/geoTwitter21-01-08.zip - i= 1000 id= 1347332282340798464
-2024-05-03 20:43:25.194551 data/geoTwitter21-01-08.zip - i= 2000 id= 1347332389136191489
-2024-05-03 20:43:28.998174 data/geoTwitter21-01-08.zip - i= 3000 id= 1347332491074437120
-2024-05-03 20:43:32.518851 data/geoTwitter21-01-08.zip - i= 4000 id= 1347332600864657408
-2024-05-03 20:43:36.039877 data/geoTwitter21-01-08.zip - i= 5000 id= 1347332706267496450
-2024-05-03 20:43:39.469886 data/geoTwitter21-01-08.zip - i= 6000 id= 1347332810445623298
-2024-05-03 20:43:43.306902 data/geoTwitter21-01-08.zip - i= 7000 id= 1347332913856196609
-2024-05-03 20:43:46.845515 data/geoTwitter21-01-08.zip - i= 8000 id= 1347333021385551872
-2024-05-03 20:43:50.557671 data/geoTwitter21-01-08.zip - i= 9000 id= 1347333130055806976
-2024-05-03 20:43:17.954799 data/geoTwitter21-01-02.zip
-2024-05-03 20:43:17.962154 data/geoTwitter21-01-02.zip - i= 0 id= 1345157858732732416
-2024-05-03 20:43:21.631096 data/geoTwitter21-01-02.zip - i= 1000 id= 1345157965662322699
-2024-05-03 20:43:25.124857 data/geoTwitter21-01-02.zip - i= 2000 id= 1345158082922483720
-2024-05-03 20:43:28.836948 data/geoTwitter21-01-02.zip - i= 3000 id= 1345158200153280518
-2024-05-03 20:43:32.320626 data/geoTwitter21-01-02.zip - i= 4000 id= 1345158320651444225
-2024-05-03 20:43:35.911623 data/geoTwitter21-01-02.zip - i= 5000 id= 1345158438754672641
-2024-05-03 20:43:39.335415 data/geoTwitter21-01-02.zip - i= 6000 id= 1345158549882556416
-2024-05-03 20:43:43.197042 data/geoTwitter21-01-02.zip - i= 7000 id= 1345158670234112007
-2024-05-03 20:43:46.715635 data/geoTwitter21-01-02.zip - i= 8000 id= 1345158786491719680
-2024-05-03 20:43:50.531357 data/geoTwitter21-01-02.zip - i= 9000 id= 1345158904876032018
-2024-05-03 20:43:17.957035 data/geoTwitter21-01-04.zip
-2024-05-03 20:43:17.967313 data/geoTwitter21-01-04.zip - i= 0 id= 1345882634702864384
-2024-05-03 20:43:21.656018 data/geoTwitter21-01-04.zip - i= 1000 id= 1345882733856260096
-2024-05-03 20:43:25.220238 data/geoTwitter21-01-04.zip - i= 2000 id= 1345882835887005697
-2024-05-03 20:43:28.958870 data/geoTwitter21-01-04.zip - i= 3000 id= 1345882930544050185
-2024-05-03 20:43:32.528931 data/geoTwitter21-01-04.zip - i= 4000 id= 1345883033593896961
-2024-05-03 20:43:36.092353 data/geoTwitter21-01-04.zip - i= 5000 id= 1345883134777307136
-2024-05-03 20:43:39.631683 data/geoTwitter21-01-04.zip - i= 6000 id= 1345883235813789696
-2024-05-03 20:43:43.424774 data/geoTwitter21-01-04.zip - i= 7000 id= 1345883341543804928
-2024-05-03 20:43:46.969908 data/geoTwitter21-01-04.zip - i= 8000 id= 1345883444585385990
-2024-05-03 20:43:50.610135 data/geoTwitter21-01-04.zip - i= 9000 id= 1345883542828556288
-2024-05-03 20:43:18.058309 data/geoTwitter21-01-06.zip
-2024-05-03 20:43:18.065212 data/geoTwitter21-01-06.zip - i= 0 id= 1346607410463571971
-2024-05-03 20:43:21.784560 data/geoTwitter21-01-06.zip - i= 1000 id= 1346607509872599040
-2024-05-03 20:43:25.349713 data/geoTwitter21-01-06.zip - i= 2000 id= 1346607618035384320
-2024-05-03 20:43:29.154662 data/geoTwitter21-01-06.zip - i= 3000 id= 1346607723874549763
-2024-05-03 20:43:32.653758 data/geoTwitter21-01-06.zip - i= 4000 id= 1346607828253908994
-2024-05-03 20:43:36.220132 data/geoTwitter21-01-06.zip - i= 5000 id= 1346607937658081281
-2024-05-03 20:43:39.759965 data/geoTwitter21-01-06.zip - i= 6000 id= 1346608044478750720
-2024-05-03 20:43:43.635012 data/geoTwitter21-01-06.zip - i= 7000 id= 1346608156202381312
-2024-05-03 20:43:47.236363 data/geoTwitter21-01-06.zip - i= 8000 id= 1346608267175342080
-2024-05-03 20:43:50.854231 data/geoTwitter21-01-06.zip - i= 9000 id= 1346608375434510337
-2024-05-03 20:43:17.972482 data/geoTwitter21-01-07.zip
-2024-05-03 20:43:17.980842 data/geoTwitter21-01-07.zip - i= 0 id= 1346969798157197316
-2024-05-03 20:43:21.700061 data/geoTwitter21-01-07.zip - i= 1000 id= 1346969884819787776
-2024-05-03 20:43:25.255238 data/geoTwitter21-01-07.zip - i= 2000 id= 1346969972032024576
-2024-05-03 20:43:29.054728 data/geoTwitter21-01-07.zip - i= 3000 id= 1346970060900986887
-2024-05-03 20:43:32.543147 data/geoTwitter21-01-07.zip - i= 4000 id= 1346970148712849415
-2024-05-03 20:43:36.003714 data/geoTwitter21-01-07.zip - i= 5000 id= 1346970235673300992
-2024-05-03 20:43:39.517444 data/geoTwitter21-01-07.zip - i= 6000 id= 1346970323246219265
-2024-05-03 20:43:43.248489 data/geoTwitter21-01-07.zip - i= 7000 id= 1346970411884453892
-2024-05-03 20:43:46.817757 data/geoTwitter21-01-07.zip - i= 8000 id= 1346970500598165508
-2024-05-03 20:43:50.980722 data/geoTwitter21-01-07.zip - i= 9000 id= 1346970588720590851
-2024-05-03 20:43:17.956780 data/geoTwitter21-01-05.zip
-2024-05-03 20:43:17.965932 data/geoTwitter21-01-05.zip - i= 0 id= 1346245022325346304
-2024-05-03 20:43:21.671948 data/geoTwitter21-01-05.zip - i= 1000 id= 1346245130425159681
-2024-05-03 20:43:25.528188 data/geoTwitter21-01-05.zip - i= 2000 id= 1346245244313067521
-2024-05-03 20:43:29.363616 data/geoTwitter21-01-05.zip - i= 3000 id= 1346245359744524289
-2024-05-03 20:43:32.762608 data/geoTwitter21-01-05.zip - i= 4000 id= 1346245471497375744
-2024-05-03 20:43:36.232869 data/geoTwitter21-01-05.zip - i= 5000 id= 1346245580096499715
-2024-05-03 20:43:39.857242 data/geoTwitter21-01-05.zip - i= 6000 id= 1346245693745360900
-2024-05-03 20:43:43.703610 data/geoTwitter21-01-05.zip - i= 7000 id= 1346245805280260097
-2024-05-03 20:43:47.329605 data/geoTwitter21-01-05.zip - i= 8000 id= 1346245913468170241
-2024-05-03 20:43:51.026208 data/geoTwitter21-01-05.zip - i= 9000 id= 1346246025791504386
-2024-05-03 20:43:17.979935 data/geoTwitter21-01-10.zip
-2024-05-03 20:43:17.987560 data/geoTwitter21-01-10.zip - i= 0 id= 1348056961783312384
-2024-05-03 20:43:21.656720 data/geoTwitter21-01-10.zip - i= 1000 id= 1348057063004524545
-2024-05-03 20:43:25.091905 data/geoTwitter21-01-10.zip - i= 2000 id= 1348057174644293636
-2024-05-03 20:43:28.834181 data/geoTwitter21-01-10.zip - i= 3000 id= 1348057285017350145
-2024-05-03 20:43:32.764100 data/geoTwitter21-01-10.zip - i= 4000 id= 1348057392710299648
-2024-05-03 20:43:36.304853 data/geoTwitter21-01-10.zip - i= 5000 id= 1348057506946441219
-2024-05-03 20:43:39.837084 data/geoTwitter21-01-10.zip - i= 6000 id= 1348057618066116614
-2024-05-03 20:43:44.040203 data/geoTwitter21-01-10.zip - i= 7000 id= 1348057727348699137
-2024-05-03 20:43:47.644629 data/geoTwitter21-01-10.zip - i= 8000 id= 1348057835763068936
-2024-05-03 20:43:51.329646 data/geoTwitter21-01-10.zip - i= 9000 id= 1348057943732858880
-168.67user 18.36system 0:37.69elapsed 496%CPU (0avgtext+0avgdata 37892maxresident)k
-57984inputs+3928outputs (2major+302658minor)pagefaults 0swaps
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets.py", line 345, in <module>
+    connection = engine.connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3375, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2209, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/mynguyen/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 13490?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Command exited with non-zero status 10
+3.91user 0.60system 0:00.80elapsed 559%CPU (0avgtext+0avgdata 43360maxresident)k
+608inputs+2208outputs (5major+153824minor)pagefaults 0swaps
