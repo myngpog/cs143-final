@@ -14,6 +14,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import sqlalchemy
 from sqlalchemy import text
+from time import time
 
 # for db connection efficiency
 from contextlib import contextmanager
@@ -197,10 +198,14 @@ def search():
                 LIMIT :limit OFFSET :offset;  
                 """
 
+                start_time = time()
                 results = connection.execute(text(sql), {'limit': num_messages, 'offset': offset,'keyword':f'%{keyword}%'})
+                execution_time = time() - start_time
                 for row in results:
                     messages.append({'text': row.text, 'created_at': row.created_at, 'screen_name': row.screen_name})
             
+                print(f"Query Execution Time: {execution_time:.2f} seconds")  # Print execution time
+
                 # Check if messages are empty and return appropriate response
                 if all(not d for d in messages):
                     print("messages list is empty")
