@@ -6,14 +6,34 @@
 <form action='/search' method="GET">
     <table>
         <tr>
-            <td>search</td>
-            <td><input type=text name='search'></td>
+            <td>Search:</td>
+            <td><input type="text" name="search"></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type=submit value='search'></td>
+            <td><input type="submit" value="Search"></td>
         </tr>
     </table>
 </form>
+
+{% if searched %}
+    {% if messages %}
+    <h2>Search Results</h2>
+    <ul>
+    {% for message in messages %}
+    {% if message.text %}
+    <p>
+        <strong>{{ message.screen_name }}</strong>: {{ message.text }}
+        <br>
+        <small>Posted on {{ message.created_at }}</small>
+    </p>
+    {% endif %}
+    {% endfor %}
+    </ul>
+
+    {% else %}
+        <p>{{ no_results }}</p>
+    {% endif %}
+{% endif %}
 
 {% endblock %}

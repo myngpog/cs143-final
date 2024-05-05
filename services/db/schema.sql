@@ -31,10 +31,11 @@ CREATE TABLE tweet_tags (
 /*
  * =====INDEXES=====
  */
+create extension rum;
 create index idx_user_created_at on users(created_at); --look for users based on acc creation
 
 create index idx_twt_created_at on tweets(created_at);
-create index idx_twt_text on tweets using gin(to_tsvector('english', text));
+create index idx_twt_text on tweets using rum(to_tsvector('english', text));
 
 create index idx_tags_tag on tweet_tags using gin(to_tsvector('english', tag));
 

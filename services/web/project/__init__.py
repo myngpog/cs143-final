@@ -1,4 +1,4 @@
-import os
+import os, re
 
 from flask import (
     Flask,
@@ -173,15 +173,46 @@ def logout():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    keyWord = request.args.get('search')
-
     # check if logged in correctly
     username = request.cookies.get('username')
     password = request.cookies.get('password')
     good_credentials = are_credentials_good(username, password)
     print('good_credentials=', good_credentials)
 
-    return render_template('search.html', logged_in=good_credentials)
+    messages = [{}]
+    page = request.args.get('page', 1, type=int)
+    num_messages = 20
+    offset = (page - 1) * num_messages
+
+    if request.method == 'GET':
+        keyword = request.args.get('search')
+        if keyword:
+            with get_connection() as connection:
+                sql = """
+                SELECT tweets.text AS text, users.screen_name, tweets.created_at
+                FROM tweets
+                JOIN users USING (id_users)
+                WHERE to_tsvector('english', tweets.text) @@ to_tsquery(:keyword)
+                ORDER BY to_tsvector('english', tweets.text) <=> to_tsquery(:keyword), created_at DESC, id_tweets DESC
+                LIMIT :limit OFFSET :offset;  
+                """
+
+                results = connection.execute(text(sql), {'limit': num_messages, 'offset': offset,'keyword':f'%{keyword}%'})
+                for row in results:
+                    messages.append({'text': row.text, 'created_at': row.created_at, 'screen_name': row.screen_name})
+            
+                # Check if messages are empty and return appropriate response
+                if all(not d for d in messages):
+                    print("messages list is empty")
+                    messages = False
+                    return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, no_results="No tweets found", page=page)
+                
+                print("successful print")
+                return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, page=page) 
+
+    return render_template('search.html', logged_in=good_credentials, searched=False)
+
+    
 
 @app.route('/create_message', methods=['GET', 'POST'])
 def create_message():
@@ -244,6 +275,17 @@ def get_user_id(username):
         return user_id
     
 
+def is_valid_username(username):
+    """
+    Function that only makes it possible to create usernames that are valid with existing Twitter guidelines (from ChatGPT)
+    """
+    # Regular expression to check if the username is valid
+    # This regex allows only alphanumeric characters and underscores, and limits the length to 15 characters.
+    if re.match(r'^\w{1,15}$', username):
+        return True
+    else:
+        return False
+
 @app.route('/create_account', methods=['GET', 'POST'])
 def create_account():
     """
@@ -258,6 +300,11 @@ def create_account():
         if not username:
             print("empty username field!")
             return render_template('create_user.html', returnMessage="Brevity is key, but maybe have something.")
+
+        # checks if the username is valid
+        if is_valid_username(username) == False:
+            print("invalid username")
+            return render_template('create_user.html', returnMessage="Invalid characters in username")
 
         if password != passwordCheck:
             print("passwords don't match")
