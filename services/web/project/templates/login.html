@@ -29,6 +29,9 @@
         </tr>
     </table>
 </form>
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
 
 {% endif %}
 {% endblock %}

@@ -117,11 +117,11 @@ def insert_tweet(connection,tweet):
             insert into users (
                 id_users,
                 created_at,
-                name
+                screen_name
               ) values (
                 :id_users,
                 :created_at,
-                :name
+                :screen_name
               ) on conflict do nothing;
             ''')
 
@@ -130,7 +130,7 @@ def insert_tweet(connection,tweet):
         res = connection.execute(sql, {
             'id_users': tweet['user']['id'],
             'created_at': tweet['user']['created_at'],
-            'name': remove_nulls(tweet['user']['name']),
+            'screen_name': remove_nulls(tweet['user']['screen_name']),
         })
 
         ########################################

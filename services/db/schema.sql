@@ -10,7 +10,8 @@ CREATE TABLE urls (
 CREATE TABLE users (
     id_users BIGSERIAL primary key,
     created_at TIMESTAMPTZ,
-    name TEXT
+    screen_name TEXT,
+    password TEXT
 );
 
 CREATE TABLE tweets (

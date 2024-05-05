@@ -23,5 +23,8 @@
         </tr>
     </table>
 </form>
+{% if returnMessage %}
+<p style="color: red;">{{ returnMessage }}</p>
+{% endif %}
 
 {% endblock %}

@@ -9,7 +9,6 @@ from flask import (
     render_template,
     redirect,
     url_for
-    # bcrypt
 )
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
@@ -65,12 +64,19 @@ def print_debug_info():
 
 
 def are_credentials_good(username, password):
-    # FIXME:
-    # look inside the databasse and check if the password is correct for the user
-    if username == 'haxor' and password == '1337':
-        return True
-    else:
-        return False
+    """
+    Helper function to check if the username and password can be found in the database
+    """
+    sql = """
+    SELECT screen_name, password
+    FROM users
+    WHERE screen_name = :username AND
+          password = :password
+    LIMIT 1;
+    """
+    with get_connection() as connection:
+        result = connection.execute(sqlalchemy.text(sql), {"username": username, "password": password}).fetchone()
+        return result is not None #if result is not none, then it returns true, otherwise, it returns false 
 
 def displayTweets():
     # render_template does preprocessing of the input html file;
@@ -81,7 +87,7 @@ def displayTweets():
     messages = [{}]
 
     sql = """
-    SELECT tweets.id_users, users.name as username, tweets.text, tweets.created_at
+    SELECT tweets.id_users, users.screen_name as username, tweets.text, tweets.created_at
     FROM tweets
     JOIN users ON tweets.id_users = users.id_users
     ORDER BY tweets.created_at DESC
@@ -115,6 +121,7 @@ def login():
     print_debug_info()
     # requests (plural) library for downloading;
     # now we need request singular 
+    
     username = request.form.get('username')
     password = request.form.get('password')
     print('username=', username)
@@ -122,10 +129,12 @@ def login():
 
     good_credentials = are_credentials_good(username, password)
     print('good_credentials=', good_credentials)
+    message = request.args.get('message', default=None)
 
     # the first time we've visited, no form submission
+
     if username is None:
-        return render_template('login.html', bad_credentials=False)
+        return render_template('login.html', bad_credentials=False, message=message)
 
     # they submitted a form; we're on the POST method
     else:
@@ -222,10 +231,10 @@ def create_message():
 
 def get_user_id(username):
     """
-    This function is a helper function for create_message that 
+    This function is a helper function for create_message that gets the user id associated with the account that made the tweet 
     """
     with get_connection() as connection:
-        result = connection.execute(text("SELECT id_users FROM users WHERE name = :username"), {'username': username})
+        result = connection.execute(text("SELECT id_users FROM users WHERE screen_name = :username"), {'username': username})
         # fetch the first column of the row (user id)
         user_id = result.scalar()
         return user_id
@@ -233,37 +242,55 @@ def get_user_id(username):
 
 @app.route('/create_account', methods=['GET', 'POST'])
 def create_account():
+    """
+    Inserts user account info into the users table 
+    """
+    if request.method == "POST":
+        username = request.form["username"].strip()
+        password = request.form["password"]
+        passwordCheck = request.form["retype_password"]
+
+        # checks if username input field is empty
+        if not username:
+            print("empty username field!")
+            return render_template('create_user.html', returnMessage="Brevity is key, but maybe have something.")
+
+        if password != passwordCheck:
+            print("passwords don't match")
+            return render_template('create_user.html', returnMessage="Passwords do not match.")
+
+        with get_connection() as connection:
+            transaction = connection.begin()
+            # Check if the username already exists in the database
+            existing_user = connection.execute(
+                sqlalchemy.text("SELECT screen_name FROM users WHERE screen_name = :username"),
+                {'username': username}
+            ).fetchone()
+
+            # if existing user alreayd exists
+            if existing_user:
+                return render_template('create_user.html', returnMessage="Username already exists.")
+
+
+            # If checks pass, insert new user
+            try:
+                sql = """
+                INSERT INTO users (
+                    created_at,
+                    screen_name,
+                    password
+                ) VALUES (
+                    NOW(),
+                    :username,
+                    :password
+                );
+                """
+                connection.execute(sqlalchemy.text(sql), {'username': username, 'password': password})
+                transaction.commit()
+                return redirect(url_for('login', message='Account created successfully. Please login'))
+            except Exception as e:
+                print("An error occurred:", e)
+                return render_template('create_user.html', returnMessage=str(e))
+
     return render_template('create_user.html')
 
-#     username = request.form.get('username')
-#     password = request.form.get('password')
-#     retype_password = request.form.get('retype_password')
-
-#     if password != retype_password:
-#             return render_template('create_user.html', error="Passwords do not match.")
-    
-#     if password != retype_password:
-#         return render_template('create_user.html', error="Passwords do not match.")
-
-#     with get_connection() as connection:
-#         # Check if username is already taken
-#         result = connection.execute(text("SELECT id_users FROM users WHERE name = :username"), {'username': username})
-#         # checks the database to see if username exists in it 
-#         user_exists = result.scalar()
-#         if user_exists:
-#             return render_template('create_user.html', error="Username already taken.")
-
-#         # Insert new user
-#         password_hash = hash_password(password)
-#         sql = """
-#         INSERT INTO users (created_at, name, password_hash) VALUES (NOW(), :username, :password_hash)
-#         """
-#         connection.execute(text(sql), {'username': username, 'password_hash': password_hash})
-#         return redirect(url_for('login'))  # Redirect to a login page after account creation
-
-# # Helper functions to hash passwords before storing them in a database
-# def hash_password(password):
-#     return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-
-# def check_password(provided_password, stored_hash):
-#     return bcrypt.checkpw(provided_password.encode('utf-8'), stored_hash)
