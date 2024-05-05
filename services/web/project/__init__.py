@@ -91,17 +91,20 @@ def displayTweets():
     FROM tweets
     JOIN users ON tweets.id_users = users.id_users
     ORDER BY tweets.created_at DESC
-    LIMIT 20;
+    LIMIT :limit OFFSET :offset;
     """
+    page = request.args.get('page', 1, type=int)
+    messages_per_page = 20
+    offset = (page - 1) * messages_per_page
     with get_connection() as connection:
-        result = connection.execute(sqlalchemy.text(sql))
+        result = connection.execute(text(sql), {'limit': messages_per_page, 'offset': offset}).fetchall()
         for row in result:
             messages.append({
                 'username': row.username,
                 'text': row.text, 
                 'created_at': row.created_at.strftime('%Y-%m-%d %H:%M:%S') # .strftime is to format date for better readability
             })
-    return messages
+    return messages, page
 
 @app.route('/')     
 def root():
@@ -112,8 +115,9 @@ def root():
     password = request.cookies.get('password')
     good_credentials = are_credentials_good(username, password)
     print('good_credentials=', good_credentials) 
+    messages, page = displayTweets()
 
-    return render_template('root.html', logged_in=good_credentials, messages=displayTweets())
+    return render_template('root.html', logged_in=good_credentials, messages=messages, page=page)
 
 
 @app.route('/login', methods=['GET', 'POST'])     
@@ -293,4 +297,3 @@ def create_account():
                 return render_template('create_user.html', returnMessage=str(e))
 
     return render_template('create_user.html')
-
