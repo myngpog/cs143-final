@@ -46,7 +46,7 @@ CREATE UNIQUE INDEX idx_users_username ON users(screen_name);
 
 -- SEARCH indexes
 create index idx_twt_text on tweets using rum(to_tsvector('simple', text)); --For FTS
-create index idx_tweet_text_eng on tweets using rum(to_tsvector('english', text));
+create index idx_twt_text_eng on tweets using rum(to_tsvector('english', text));
 
 
 -- Unused for just here for tags
