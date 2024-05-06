@@ -8,7 +8,8 @@ from flask import (
     make_response,
     render_template,
     redirect,
-    url_for
+    url_for,
+    Markup
 )
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
@@ -189,20 +190,24 @@ def search():
         keyword = request.args.get('search')
         if keyword:
             with get_connection() as connection:
+                formatted_keyword = ' '.join(keyword.strip().split())
+                print(formatted_keyword)
                 sql = """
                 SELECT tweets.text AS text, users.screen_name, tweets.created_at
                 FROM tweets
                 JOIN users USING (id_users)
-                WHERE to_tsvector('english', tweets.text) @@ to_tsquery(:keyword)
-                ORDER BY to_tsvector('english', tweets.text) <=> to_tsquery(:keyword), created_at DESC, id_tweets DESC
+                WHERE to_tsvector('english', tweets.text) @@ phraseto_tsquery(:keyword)
+                ORDER BY to_tsvector('english', tweets.text) <=> phraseto_tsquery(:keyword), created_at DESC, id_tweets DESC
                 LIMIT :limit OFFSET :offset;  
                 """
 
                 start_time = time()
-                results = connection.execute(text(sql), {'limit': num_messages, 'offset': offset,'keyword':f'%{keyword}%'})
+                results = connection.execute(text(sql), {'limit': num_messages, 'offset': offset,'keyword':f'{formatted_keyword}'})
                 execution_time = time() - start_time
+                regex = re.compile(re.escape(keyword), re.IGNORECASE) # highlighting assist
                 for row in results:
-                    messages.append({'text': row.text, 'created_at': row.created_at, 'screen_name': row.screen_name})
+                    highlighted_text = Markup(regex.sub(lambda match: f'<mark>{match.group(0)}</mark>', row.text)) # highlighting assist
+                    messages.append({'text': highlighted_text, 'created_at': row.created_at, 'screen_name': row.screen_name})
             
                 print(f"Query Execution Time: {execution_time:.2f} seconds")  # Print execution time
 
@@ -213,7 +218,7 @@ def search():
                     return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, no_results="No tweets found", page=page)
                 
                 print("successful print")
-                return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, page=page) 
+                return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, page=page)
 
     return render_template('search.html', logged_in=good_credentials, searched=False)
 

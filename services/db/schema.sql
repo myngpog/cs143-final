@@ -32,12 +32,24 @@ CREATE TABLE tweet_tags (
  * =====INDEXES=====
  */
 create extension rum;
-create index idx_user_created_at on users(created_at); --look for users based on acc creation
 
-create index idx_twt_created_at on tweets(created_at);
-create index idx_twt_text on tweets using rum(to_tsvector('english', text));
+-- DISPLAY TWEETS indexes
+CREATE INDEX idx_tweets_id_users ON tweets(id_users);
+CREATE INDEX idx_users_id_users ON users(id_users);
+CREATE INDEX idx_tweets_created_at ON tweets(created_at DESC);
 
-create index idx_tags_tag on tweet_tags using gin(to_tsvector('english', tag));
+-- USERNAME-PASSWORD MATCHING indexes
+CREATE INDEX idx_users_username_password ON users(screen_name, passwrd);
+
+-- LOOKUP USERNAME indexes
+CREATE UNIQUE INDEX idx_users_username ON users(screen_name);
+
+-- SEARCH indexes
+create index idx_twt_text on tweets using rum(to_tsvector('simple', text)); --For FTS
+create index idx_tweet_text_eng on tweets using rum(to_tsvector('english', text));
 
 
-COMMIT;
+-- Unused for just here for tags
+create index idx_tags_tag on tweet_tags using rum(to_tsvector('simple', tag));
+
+
