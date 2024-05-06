@@ -22,7 +22,7 @@ CREATE TABLE tweets (
 );
 
 CREATE TABLE tweet_tags (
-    id_tweets BIGINT,
+    id_tweets BIGSERIAL,
     tag TEXT,
     PRIMARY KEY (id_tweets, tag),
     FOREIGN KEY (id_tweets) REFERENCES tweets(id_tweets)
@@ -39,7 +39,7 @@ CREATE INDEX idx_users_id_users ON users(id_users);
 CREATE INDEX idx_tweets_created_at ON tweets(created_at DESC);
 
 -- USERNAME-PASSWORD MATCHING indexes
-CREATE INDEX idx_users_username_password ON users(screen_name, passwrd);
+CREATE INDEX idx_users_username_password ON users(screen_name, password);
 
 -- LOOKUP USERNAME indexes
 CREATE UNIQUE INDEX idx_users_username ON users(screen_name);
@@ -51,5 +51,3 @@ create index idx_tweet_text_eng on tweets using rum(to_tsvector('english', text)
 
 -- Unused for just here for tags
 create index idx_tags_tag on tweet_tags using rum(to_tsvector('simple', tag));
-
-
