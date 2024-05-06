@@ -51,3 +51,5 @@ create index idx_twt_text_eng on tweets using rum(to_tsvector('english', text));
 
 -- Unused for just here for tags
 create index idx_tags_tag on tweet_tags using rum(to_tsvector('simple', tag));
+
+COMMIT;

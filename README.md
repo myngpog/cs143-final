@@ -3,7 +3,7 @@
 
 [![](https://github.com/myngpog/cs143-final/actions/workflows/tests.yml/badge.svg)](https://github.com/myngpog/cs143-final/actions/workflows/tests.yml)
 
-[Tutorial Link](https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/)
+[Final Exam Link Details](https://github.com/mikeizbicki/cmc-csci143/tree/2024spring/topic_13_finalproject)
 
 ### Overview
 This is a basic, working version of twitter. It includes the use of Python, Flask, HTML/CSS, Jinja2, and SQLite3. 
