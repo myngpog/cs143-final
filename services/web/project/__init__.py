@@ -1,4 +1,5 @@
-import os, re
+import os
+import re
 
 from flask import (
     Flask,
@@ -24,11 +25,12 @@ from contextlib import contextmanager
 app = Flask(__name__)
 app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
-db_connection = "postgresql://hello_flask:hello_flask@db:5432/hello_flask_dev"
+db_connection = "postgresql://hello_flask:hello_flask@db:5432/hello_flask_prod"
 
 # Tutorial's table // DEAD CODE
-class User(db.Model):
 
+
+class User(db.Model):
     __tablename__ = "users_b"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -50,6 +52,7 @@ def get_connection():
         yield connection
     finally:
         connection.close()
+
 
 def print_debug_info():
     # GET method
@@ -78,7 +81,8 @@ def are_credentials_good(username, password):
     """
     with get_connection() as connection:
         result = connection.execute(sqlalchemy.text(sql), {"username": username, "password": password}).fetchone()
-        return result is not None #if result is not none, then it returns true, otherwise, it returns false 
+        return result is not None  # if result is not none, then it returns true, otherwise, it returns false
+
 
 def displayTweets():
     # render_template does preprocessing of the input html file;
@@ -103,12 +107,13 @@ def displayTweets():
         for row in result:
             messages.append({
                 'username': row.username,
-                'text': row.text, 
-                'created_at': row.created_at.strftime('%Y-%m-%d %H:%M:%S') # .strftime is to format date for better readability
+                'text': row.text,
+                'created_at': row.created_at.strftime('%Y-%m-%d %H:%M:%S')  # .strftime is to format date for better readability
             })
     return messages, page
 
-@app.route('/')     
+
+@app.route('/')
 def root():
     print_debug_info()
 
@@ -116,18 +121,18 @@ def root():
     username = request.cookies.get('username')
     password = request.cookies.get('password')
     good_credentials = are_credentials_good(username, password)
-    print('good_credentials=', good_credentials) 
+    print('good_credentials=', good_credentials)
     messages, page = displayTweets()
 
     return render_template('root.html', logged_in=good_credentials, messages=messages, page=page)
 
 
-@app.route('/login', methods=['GET', 'POST'])     
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     print_debug_info()
     # requests (plural) library for downloading;
-    # now we need request singular 
-    
+    # now we need request singular
+
     username = request.form.get('username')
     password = request.form.get('password')
     print('username=', username)
@@ -148,21 +153,22 @@ def login():
             return render_template('login.html', bad_credentials=True)
         else:
             # if we get here, then we're logged in
-            #return 'login successful'
+            # return 'login successful'
 
             # create a cookie that contains the username/password info
 
             template = render_template(
-                'login.html', 
+                'login.html',
                 bad_credentials=False,
                 logged_in=True)
-            #return template
+            # return template
             response = make_response(template)
             response.set_cookie('username', username)
             response.set_cookie('password', password)
             return response
 
-@app.route('/logout')     
+
+@app.route('/logout')
 def logout():
     # Clear the login cookies by setting an empty value and an expiry time in the past
     response = make_response(render_template('logout.html', logged_in=False))
@@ -171,7 +177,6 @@ def logout():
 
     return response
 
-# 403 error code
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
@@ -198,17 +203,17 @@ def search():
                 JOIN users USING (id_users)
                 WHERE to_tsvector('english', tweets.text) @@ phraseto_tsquery(:keyword)
                 ORDER BY to_tsvector('english', tweets.text) <=> phraseto_tsquery(:keyword), created_at DESC, id_tweets DESC
-                LIMIT :limit OFFSET :offset;  
+                LIMIT :limit OFFSET :offset;
                 """
 
                 start_time = time()
-                results = connection.execute(text(sql), {'limit': num_messages, 'offset': offset,'keyword':f'{formatted_keyword}'})
+                results = connection.execute(text(sql), {'limit': num_messages, 'offset': offset, 'keyword': f'{formatted_keyword}'})
                 execution_time = time() - start_time
-                regex = re.compile(re.escape(keyword), re.IGNORECASE) # highlighting assist
+                regex = re.compile(re.escape(keyword), re.IGNORECASE)  # highlighting assist
                 for row in results:
-                    highlighted_text = Markup(regex.sub(lambda match: f'<mark>{match.group(0)}</mark>', row.text)) # highlighting assist
+                    highlighted_text = Markup(regex.sub(lambda match: f'<mark>{match.group(0)}</mark>', row.text))  # highlighting assist
                     messages.append({'text': highlighted_text, 'created_at': row.created_at, 'screen_name': row.screen_name})
-            
+
                 print(f"Query Execution Time: {execution_time:.2f} seconds")  # Print execution time
 
                 # Check if messages are empty and return appropriate response
@@ -216,13 +221,12 @@ def search():
                     print("messages list is empty")
                     messages = False
                     return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, no_results="No tweets found", page=page)
-                
+
                 print("successful print")
                 return render_template('search.html', logged_in=good_credentials, messages=messages, searched=True, page=page)
 
     return render_template('search.html', logged_in=good_credentials, searched=False)
 
-    
 
 @app.route('/create_message', methods=['GET', 'POST'])
 def create_message():
@@ -238,7 +242,7 @@ def create_message():
         message = request.form.get('message').strip() if request.form.get('message') else ''
         print(message)
         if not message:  # No message was entered
-           return render_template('create_message.html', returnMessage="No message provided.", logged_in=good_credentials)
+            return render_template('create_message.html', returnMessage="No message provided.", logged_in=good_credentials)
 
         try:
             with get_connection() as connection:
@@ -249,11 +253,11 @@ def create_message():
                     sql = """
                     INSERT INTO tweets (
                         id_users,
-                        created_at, 
+                        created_at,
                         text
                     ) VALUES (
-                        :id_users, 
-                        NOW(), 
+                        :id_users,
+                        NOW(),
                         :message);
                     """
                     print("Executing SQL...")
@@ -261,29 +265,29 @@ def create_message():
                     transaction.commit()
                     print("SQL executed successfully.")
                     # in case of error in trans
-                except Exception as e:    
+                except Exception as e:
                     transaction.rollback()
                     raise e
             return render_template('create_message.html', returnMessage="Message successfully posted!", logged_in=good_credentials)
-            
+
         # in case of error with connection
         except Exception as e:
             print("An error occurred:", e)
-            return render_template('create_message.html', returnMessage=str(e), logged_in=good_credentials)   
-    
+            return render_template('create_message.html', returnMessage=str(e), logged_in=good_credentials)
+
     return render_template('create_message.html', logged_in=good_credentials)
 
 
 def get_user_id(username):
     """
-    This function is a helper function for create_message that gets the user id associated with the account that made the tweet 
+    This function is a helper function for create_message that gets the user id associated with the account that made the tweet
     """
     with get_connection() as connection:
         result = connection.execute(text("SELECT id_users FROM users WHERE screen_name = :username"), {'username': username})
         # fetch the first column of the row (user id)
         user_id = result.scalar()
         return user_id
-    
+
 
 def is_valid_username(username):
     """
@@ -296,10 +300,11 @@ def is_valid_username(username):
     else:
         return False
 
+
 @app.route('/create_account', methods=['GET', 'POST'])
 def create_account():
     """
-    Inserts user account info into the users table 
+    Inserts user account info into the users table
     """
     if request.method == "POST":
         username = request.form["username"].strip()
@@ -312,7 +317,7 @@ def create_account():
             return render_template('create_user.html', returnMessage="Brevity is key, but maybe have something.")
 
         # checks if the username is valid
-        if is_valid_username(username) == False:
+        if not is_valid_username(username):
             print("invalid username")
             return render_template('create_user.html', returnMessage="Invalid characters in username")
 
@@ -331,7 +336,6 @@ def create_account():
             # if existing user alreayd exists
             if existing_user:
                 return render_template('create_user.html', returnMessage="Username already exists.")
-
 
             # If checks pass, insert new user
             try:
