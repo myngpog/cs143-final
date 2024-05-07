@@ -2,7 +2,7 @@
 ## By: My Nguyen
 
 [![](https://github.com/myngpog/cs143-final/actions/workflows/tests.yml/badge.svg)](https://github.com/myngpog/cs143-final/actions/workflows/tests.yml)
-[![](https://github.com/myngpog/cs143-final/blob/master/.github/workflows/db.yml/badge.svg)](https://github.com/myngpog/cs143-final/blob/master/.github/workflows/db.yml)
+[![](https://github.com/myngpog/cs143-final/actions/workflows/db.yml/badge.svg)](https://github.com/myngpog/cs143-final/actions/workflows/db.yml)
 
 [Final Exam Link Details](https://github.com/mikeizbicki/cmc-csci143/tree/2024spring/topic_13_finalproject)
 
