@@ -157,12 +157,8 @@ def login():
 
             # create a cookie that contains the username/password info
 
-            template = render_template(
-                'login.html',
-                bad_credentials=False,
-                logged_in=True)
             # return template
-            response = make_response(template)
+            response = make_response(redirect(url_for('root')))
             response.set_cookie('username', username)
             response.set_cookie('password', password)
             return response
