@@ -3,3 +3,4 @@
 # .env.dev
 test_output.log
 prod_output.log
+load_parallel.sh
