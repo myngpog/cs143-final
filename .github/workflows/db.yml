@@ -1,4 +1,4 @@
-name: DB Test
+name: load (small) db
 
 on:
   push:
